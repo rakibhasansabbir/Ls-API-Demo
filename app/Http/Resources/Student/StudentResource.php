@@ -16,7 +16,10 @@ class StudentResource extends JsonResource
     {
         return [
             'name' => $this->name,
-            'address' => $this->address
+            'address' => $this->address,
+            'href' => [
+                'feesStatus' => route('fees.index',$this->id)
+            ]
         ];
     }
 }
