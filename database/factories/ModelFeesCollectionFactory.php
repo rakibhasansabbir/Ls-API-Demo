@@ -8,10 +8,8 @@ $factory->define(App\Model\FeesCollection::class, function (Faker $faker) {
         'student_id' => function(){
             return Student::all()->random();
         },
-        'feesAmount' => $faker->numberBetween(50, 2500000),
-        'feesStatus' => $faker->word,
-        'paidAmount' => $faker->numberBetween(50, 2500000),
-        'dueAmount' => $faker->numberBetween(50, 2500000),
+        'feesAmount' => $faker->numberBetween(1000, 1000),
+        'paidAmount' => $faker->numberBetween(0, 1000),
 
     ];
 });

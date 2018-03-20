@@ -16,7 +16,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return  StudentCollection::collection(Student::all());
+        return  StudentCollection::collection(Student::paginate(5));
     }
 
     /**

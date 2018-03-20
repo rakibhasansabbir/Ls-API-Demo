@@ -18,9 +18,7 @@ class CreateFeesCollectionsTable extends Migration
             $table->integer('student_id')->unsigned()->index();
             $table->foreign('student_id')->references('id')->on('students');
             $table->integer('feesAmount');
-            $table->string('feesStatus');
             $table->integer('paidAmount');
-            $table->integer('dueAmount');
             $table->timestamps();
         });
     }

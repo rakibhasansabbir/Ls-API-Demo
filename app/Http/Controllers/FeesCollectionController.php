@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\fees\FeesResource;
 use App\Model\FeesCollection;
+use App\Model\Student;
 use Illuminate\Http\Request;
 
 class FeesCollectionController extends Controller
@@ -12,9 +14,9 @@ class FeesCollectionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Student $student)
     {
-        //
+        return FeesResource::collection($student->fees);
     }
 
     /**
