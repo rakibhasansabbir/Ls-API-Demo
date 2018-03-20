@@ -16,7 +16,7 @@ class CreateFeesCollectionsTable extends Migration
         Schema::create('fees_collections', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('student_id')->unsigned()->index();
-            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
+            $table->foreign('student_id')->references('id')->on('students');
             $table->integer('feesAmount');
             $table->string('feesStatus');
             $table->integer('paidAmount');

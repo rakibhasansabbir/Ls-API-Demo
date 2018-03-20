@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\Student\StudentResource;
 use App\Model\Student;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        return Student::all();
     }
 
     /**
@@ -46,7 +47,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        //
+        return new StudentResource($student);
     }
 
     /**
