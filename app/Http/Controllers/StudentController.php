@@ -14,6 +14,11 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth:api')->except('index','show');
+    }
+
     public function index()
     {
         return  StudentCollection::collection(Student::paginate(5));

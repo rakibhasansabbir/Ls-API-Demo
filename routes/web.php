@@ -15,8 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::apiResource('/students','StudentController');
 
-Route::group(['prefix'=>'students'],function (){
-    Route::apiResource('/{student}/fees','FeesCollectionController');
-});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
